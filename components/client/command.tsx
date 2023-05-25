@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { Settings, User } from 'lucide-react';
 
-import { FiCode, FiFile, FiMessageCircle } from 'react-icons/fi';
+import { FiCode, FiFile, FiMessageCircle, FiMusic } from 'react-icons/fi';
 
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from '@/components/ui/command';
 import { useTranslations } from 'next-intl';
@@ -69,6 +69,18 @@ export const ClientCommand = () => {
                         >
                             <FiFile className='mr-2 h-4 w-4' />
                             <span>{t('New File')}</span>
+                        </button>
+                    </CommandItem>
+                    <CommandItem>
+                        <button
+                            onClick={() => {
+                                router.push('/mode/whisper');
+                                setOpen(false);
+                            }}
+                            className='flex items-center'
+                        >
+                            <FiMusic className='mr-2 h-4 w-4' />
+                            <span>{t('New Whisper')}</span>
                         </button>
                     </CommandItem>
                 </CommandGroup>

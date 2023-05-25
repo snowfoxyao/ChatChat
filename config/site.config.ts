@@ -8,15 +8,15 @@ interface siteConfig {
 }
 
 export const siteConfig: siteConfig = {
-    title: 'Chat Chat',
+    title: 'JARVIS AI',
     description: 'Unlock next-level conversations with AI',
 };
 
 export const sidebarMoreMenu = [
     {
-        title: 'Harry Yep',
-        value: 'harry-yep',
-        url: 'https://harryyep.com',
+        title: 'Adrian Yeo',
+        value: 'adrian-yeo',
+        url: '',
         icon: GrCompass,
     },
 ];

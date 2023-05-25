@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 import store from '@/hooks/store';
 import { useAtom } from 'jotai';
 
-import { FiLayout, FiCode, FiFile, FiMessageCircle, FiChevronDown } from 'react-icons/fi';
+import { FiLayout, FiCode, FiFile, FiMessageCircle, FiChevronDown, FiMusic } from 'react-icons/fi';
 
 import LandingSide from '@/components/landing/side/side';
 import HeaderSettings from '@/components/landing/main/header-settings';
@@ -124,5 +124,11 @@ const ModeList = [
         value: 'file',
         icon: FiFile,
         link: '/mode/file',
+    },
+    {
+        title: 'Whisper',
+        value: 'whisper',
+        icon: FiMusic,
+        link: '/mode/whisper',
     },
 ];
