@@ -1,54 +1,104 @@
-:root {
-    --background-color: #ffffff;
-    --foreground-color: #333333;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-    --muted-color: #f2f2f2;
-    --muted-foreground-color: #888888;
+@layer base {
+    :root {
+        --colors: {
+            background: hsl(0, 0%, 100%);
+            foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --popover-color: #ffffff;
-    --popover-foreground-color: #333333;
+            muted: hsl(210, 40%, 96.1%);
+            muted-foreground: hsl(215.4, 16.3%, 46.9%);
 
-    --card-color: #ffffff;
-    --card-foreground-color: #333333;
+            popover: hsl(0, 0%, 100%);
+            popover-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --border-color: #dddddd;
-    --input-color: #dddddd;
+            card: hsl(0, 0%, 100%);
+            card-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --primary-color: #333333;
-    --primary-foreground-color: #fafafa;
+            border: hsl(214.3, 31.8%, 91.4%);
+            input: hsl(214.3, 31.8%, 91.4%);
 
-    --secondary-color: #f2f2f2;
-    --secondary-foreground-color: #333333;
+            primary: hsl(222.2, 47.4%, 11.2%);
+            primary-foreground: hsl(210, 40%, 98%);
 
-    --accent-color: #f2f2f2;
-    --accent-foreground-color: #333333;
+            secondary: hsl(210, 40%, 96.1%);
+            secondary-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --destructive-color: #ff0000;
-    --destructive-foreground-color: #fafafa;
+            accent: hsl(210, 40%, 96.1%);
+            accent-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --ring-color: #cccccc;
+            destructive: hsl(0, 100%, 50%);
+            destructive-foreground: hsl(210, 40%, 98%);
 
-    --border-radius: 0.5rem;
+            ring: hsl(215, 20.2%, 65.1%);
+        };
+        
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --colors: {
+            background: hsl(224, 71%, 4%);
+            foreground: hsl(213, 31%, 91%);
+
+            muted: hsl(223, 47%, 11%);
+            muted-foreground: hsl(215.4, 16.3%, 56.9%);
+
+            popover: hsl(224, 71%, 4%);
+            popover-foreground: hsl(215, 20.2%, 65.1%);
+
+            card: hsl(0, 0%, 100%);
+            card-foreground: hsl(222.2, 47.4%, 11.2%);
+
+            border: hsl(216, 34%, 17%);
+            input: hsl(216, 34%, 17%);
+
+            primary: hsl(210, 40%, 98%);
+            primary-foreground: hsl(222.2, 47.4%, 1.2%);
+
+            secondary: hsl(222.2, 47.4%, 11.2%);
+            secondary-foreground: hsl(210, 40%, 98%);
+
+            accent: hsl(216, 34%, 17%);
+            accent-foreground: hsl(210, 40%, 98%);
+
+            destructive: hsl(0, 63%, 31%);
+            destructive-foreground: hsl(210, 40%, 98%);
+
+            ring: hsl(216, 34%, 17%);
+        };
+
+        --radius: 0.5rem;
+    }
 }
 
-body {
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+    }
+}
+
+:root {
     scroll-behavior: smooth;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    font-feature-settings: 'rlig' 1, 'calt' 1;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.2rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888888;
-    border-radius: 4px;
+    border-radius: var(--radius);
 }
 
-@keyframes left-bounce {
-    0%, 100% {
+@keyframes bounce {
+    0%,
+    100% {
         transform: translateX(-25%);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
@@ -58,23 +108,8 @@ body {
     }
 }
 
-@keyframes right-bounce {
-    0%, 100% {
-        transform: translateX(25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-}
-
-.animate-left-bounce {
-    animation: left-bounce 1s infinite;
-}
-
-.animate-right-bounce {
-    animation: right-bounce 1s infinite;
+.animate-bounce {
+    animation: bounce 1s infinite;
 }
 
 @keyframes gradient-flow {
@@ -90,7 +125,7 @@ body {
 }
 
 .gradient-flow {
-    background-image: linear-gradient(to right, #38b2ac, #3b82f6, #9333ea);
+    background: linear-gradient(to right, #38b2ac, #3b82f6, #9333ea);
     background-size: 200% 100%;
     animation: gradient-flow 2s ease infinite;
 }
