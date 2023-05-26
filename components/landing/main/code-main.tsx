@@ -264,8 +264,7 @@ const CodeMain = () => {
 export default CodeMain;
 
 const CodeModeConfig = [
-//    { name: 'Explain', value: 'explain', hint: 'This mode will explain what the code means.' },
-    { name: 'Explain', value: 'explain', hint: 'This mode is stupid as fuck' },
+    { name: 'Explain', value: 'explain', hint: 'This mode will explain what the code means.' },
     { name: 'Convert', value: 'convert', hint: 'This mode will convert the code to a different language.' },
     { name: 'Custom', value: 'custom', hint: 'This mode will allow you to create your own custom rule.' },
 ];
