@@ -410,7 +410,7 @@ const FileMain = () => {
                                 <p className='mb-2 text-sm text-gray-500 dark:text-gray-400'>
                                     <span className='font-semibold'>{t('Click to upload')}</span> {t('or drag and drop a file')}
                                 </p>
-                                <p className='text-xs text-gray-500 dark:text-gray-400'>{t('.mp3 file only')}</p>
+                                <p className='text-xs text-gray-500 dark:text-gray-400'>{t('mp3 file only')}</p>
                             </div>
                             <input id='dropzone-file' type='file' className='hidden' draggable />
                         </label>
